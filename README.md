@@ -11,6 +11,7 @@ Aplicación de consola en Python para gestión financiera personal, diseñada ba
 ---
 
 ## 🎯 Características Principales
+
 - **Precisión Monetaria Exacta:** Cálculos matemáticos mediante `decimal.Decimal` con cuantificación a 2 dígitos (`0.01`), eliminando imprecisiones de coma flotante binaria.
 - **Persistencia Atómica (RNF-001):** Sistema de almacenamiento en JSON con escritura en archivo temporal, vaciado físico a disco (`fsync`) y reemplazo atómico a nivel de SO (`os.replace`), garantizando cero corrupción de datos ante cortes imprevistos de energía.
 - **Alertas Presupuestarias Proactivas (RF-004 & RN-005):** Monitoreo del consumo mensual por categoría (`🟢 NORMAL`, `🟡 ALERTA` al 80%, `🔴 EXCEDIDO` al 100%).
@@ -62,34 +63,40 @@ p01_gestor_finanzas/
 ## 🛠️ Instalación y Uso
 
 ### 1. Clonar el repositorio
+
 ```bash
 git clone https://github.com/TU_USUARIO/p01-gestor-finanzas.git
 cd p01-gestor-finanzas
 ```
 
 ### 2. Configurar entorno virtual (Opcional pero recomendado)
+
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
 ### 3. Instalar dependencias de desarrollo
+
 ```powershell
 pip install pytest coverage bandit
 ```
 
 ### 4. Ejecutar la suite de pruebas unitarias
+
 ```powershell
 python -m pytest -v
 ```
 
 ### 5. Medir la cobertura de pruebas
+
 ```powershell
 coverage run -m pytest
 coverage report -m
 ```
 
 ### 6. Ejecutar la aplicación
+
 ```powershell
 python main.py
 ```
@@ -97,14 +104,16 @@ python main.py
 ---
 
 ## 📋 Reglas de Negocio Implementadas
-* **RN-001 (Positividad Monetaria):** Todo monto o presupuesto debe ser mayor a 0.00.
-* **RN-002 (Inmutabilidad de Identificadores):** Cada entidad cuenta con un identificador UUID único no modificable.
-* **RN-003 (Categorización Obligatoria):** Todo gasto debe estar categorizado en un rubro existente.
-* **RN-004 (Fecha Válida):** No se permiten fechas con más de 24 horas en el futuro ni con más de 5 años en el pasado.
-* **RN-005 (Semáforo Presupuestario):** Cálculo automático de porcentaje consumido y disparo de alertas al rebasar el 80% o 100% del tope mensual.
+
+- **RN-001 (Positividad Monetaria):** Todo monto o presupuesto debe ser mayor a 0.00.
+- **RN-002 (Inmutabilidad de Identificadores):** Cada entidad cuenta con un identificador UUID único no modificable.
+- **RN-003 (Categorización Obligatoria):** Todo gasto debe estar categorizado en un rubro existente.
+- **RN-004 (Fecha Válida):** No se permiten fechas con más de 24 horas en el futuro ni con más de 5 años en el pasado.
+- **RN-005 (Semáforo Presupuestario):** Cálculo automático de porcentaje consumido y disparo de alertas al rebasar el 80% o 100% del tope mensual.
 
 ---
 
 ## 👨‍💻 Autor
-Desarrollado como parte de la **Ruta Profesional de Ingeniería de Software Full-Stack con Python**.
+
+Desarrollado por Cesar Leyba como parte de la **Ruta Profesional de Ingeniería de Software Full-Stack con Python**.
 Licencia MIT.
