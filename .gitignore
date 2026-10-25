@@ -1,0 +1,16 @@
+#Bitecode y cache generado por python
+__pycache__/
+*.py[cod]
+
+# Entornos virtuales
+.venv/
+venv/
+
+# Cache de pruebas automaticas
+.pytest_cache/
+.coverage
+
+# Archivos de datos locales del usuario
+# Regla de seaguridad: nunca subir registros financieros personales al repositorio
+data/*.json
+!data/.gitkeep
